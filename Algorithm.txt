@@ -1,0 +1,32 @@
+This code appears to be an implementation of two different algorithms: Binary Indexed Tree (BIT) and Merge Sort. Let's go through each part and explain its functionality.
+
+The `BinaryIndexedTree` class represents a Binary Indexed Tree data structure. Here's a breakdown of its methods:
+
+- `__init__(self, sz)`: Initializes the Binary Indexed Tree with a given size `sz` and creates an array `tree` of zeros with size `sz`.
+
+- `update(self, idx, val)`: Updates the Binary Indexed Tree at index `idx` by adding the value `val` to it. This method uses the binary representation of the index to determine the relevant positions in the tree to update.
+
+- `read(self, idx)`: Computes the cumulative sum from index 1 to `idx` in the Binary Indexed Tree. It iteratively adds the values from the tree based on the binary representation of the index.
+
+The code after the `if __name__ == '__main__':` block seems to use the `BinaryIndexedTree` class to calculate the number of inversions in an array.
+
+Here's an explanation of that part of the code:
+
+1. Read the input `t`, which represents the number of test cases.
+
+2. Iterate `t` times:
+   a. Read the input `n`, the size of the array.
+   b. Read the array elements and store them in `arr` as a list of integers.
+
+   Note: The `raw_input()` function is used in Python 2 to read input from the user, while `input()` is used in Python 3. Since the code has `#!/bin/python` at the beginning, it suggests that the code is meant to be run using Python 2.
+
+3. Initialize a variable `cnt` to keep track of the number of inversions.
+   Initialize an instance of `BinaryIndexedTree` called `bit` with a size of `10**7 + 1`.
+
+4. Iterate over the elements of the `arr` list in reverse order:
+   a. Update the `bit` by adding 1 to the element `val`.
+   b. Add the cumulative sum of elements less than `val` in the `bit` to `cnt`.
+
+5. Print the value of `cnt`, which represents the number of inversions in the array.
+
+The second part of the code implements the Merge Sort algorithm, which counts the number of inversions in an array. However, it seems to be unrelated to the rest of the code and does not appear to be used.
